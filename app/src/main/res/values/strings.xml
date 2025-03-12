@@ -11,4 +11,5 @@
     <string name="type_message_hint">Type a message</string>
     <string name="send_button">Send</string>
     <string name="ai_chatbot_title">AI Chatbot</string>
+    <string name="toolbar_title">StudyMate</string>
 </resources>
