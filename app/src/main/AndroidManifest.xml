@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.attendanceapp">
+    package="com.example.studymate">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -15,17 +15,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.studymate.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AttendanceActivity" />
-        <activity android:name=".TaskManagerActivity" />
-        <activity android:name=".StudyMaterialActivity" />
-        <activity android:name=".ChatActivity" />
-        <activity android:name=".AIChatbotActivity" />
+        <activity android:name="com.example.studymate.AttendanceActivity" />
+        <activity android:name="com.example.studymate.TaskManagerActivity" />
+        <activity android:name="com.example.studymate.StudyMaterialActivity" />
+        <activity android:name="com.example.studymate.ChatActivity" />
+        <activity android:name="com.example.studymate.AIChatbotActivity" />
     </application>
 
 </manifest>

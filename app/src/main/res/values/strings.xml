@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">College Attendance System</string>
+    <string name="app_name">StudyMate</string>
     <string name="attendance_title">Mark Attendance</string>
     <string name="mark_attendance_button">Mark Attendance</string>
     <string name="task_manager_title">Task Manager</string>
