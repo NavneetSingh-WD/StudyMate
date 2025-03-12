@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">College Attendance System</string>
+    <string name="attendance_title">Mark Attendance</string>
+    <string name="mark_attendance_button">Mark Attendance</string>
+    <string name="task_manager_title">Task Manager</string>
+    <string name="add_task_button">Add Task</string>
+    <string name="study_material_title">Study Material</string>
+    <string name="add_study_material_button">Add Study Material</string>
+    <string name="chat_title">Chat</string>
+    <string name="type_message_hint">Type a message</string>
+    <string name="send_button">Send</string>
+    <string name="ai_chatbot_title">AI Chatbot</string>
+</resources>

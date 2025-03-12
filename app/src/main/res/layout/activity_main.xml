@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/btn_attendance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Attendance"
+        android:onClick="openAttendance" />
+
+    <Button
+        android:id="@+id/btn_task_manager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Task Manager"
+        android:onClick="openTaskManager" />
+
+    <Button
+        android:id="@+id/btn_study_material"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Study Material"
+        android:onClick="openStudyMaterial" />
+
+    <Button
+        android:id="@+id/btn_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chat"
+        android:onClick="openChat" />
+
+    <Button
+        android:id="@+id/btn_ai_chatbot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AI Chatbot"
+        android:onClick="openAIChatbot" />
+
+</LinearLayout>
