@@ -9,15 +9,20 @@ import android.database.sqlite.SQLiteOpenHelper
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     override fun onCreate(db: SQLiteDatabase) {
+        // Create Attendance table
         db.execSQL(CREATE_TABLE_ATTENDANCE)
+        // Create Tasks table
         db.execSQL(CREATE_TABLE_TASKS)
+        // Create Study Material table
         db.execSQL(CREATE_TABLE_STUDY_MATERIAL)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+        // Drop older tables if they exist
         db.execSQL("DROP TABLE IF EXISTS $TABLE_ATTENDANCE")
         db.execSQL("DROP TABLE IF EXISTS $TABLE_TASKS")
         db.execSQL("DROP TABLE IF EXISTS $TABLE_STUDY_MATERIAL")
+        // Create new tables
         onCreate(db)
     }
 
@@ -27,12 +32,14 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         val values = ContentValues()
         values.put(COLUMN_ATTENDANCE_DATE, date)
         values.put(COLUMN_ATTENDANCE_STATUS, status)
+        // Insert a new row into the Attendance table
         db.insert(TABLE_ATTENDANCE, null, values)
         db.close()
     }
 
     fun getAllAttendance(): Cursor {
         val db = this.readableDatabase
+        // Query all rows from the Attendance table
         return db.query(TABLE_ATTENDANCE, null, null, null, null, null, null)
     }
 
@@ -41,12 +48,14 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         val values = ContentValues()
         values.put(COLUMN_ATTENDANCE_DATE, date)
         values.put(COLUMN_ATTENDANCE_STATUS, status)
+        // Update a specific row in the Attendance table
         db.update(TABLE_ATTENDANCE, values, "$COLUMN_ID = ?", arrayOf(id.toString()))
         db.close()
     }
 
     fun deleteAttendance(id: Int) {
         val db = this.writableDatabase
+        // Delete a specific row from the Attendance table
         db.delete(TABLE_ATTENDANCE, "$COLUMN_ID = ?", arrayOf(id.toString()))
         db.close()
     }
@@ -58,12 +67,14 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         values.put(COLUMN_TASK_TITLE, title)
         values.put(COLUMN_TASK_DESCRIPTION, description)
         values.put(COLUMN_TASK_DUE_DATE, dueDate)
+        // Insert a new row into the Tasks table
         db.insert(TABLE_TASKS, null, values)
         db.close()
     }
 
     fun getAllTasks(): Cursor {
         val db = this.readableDatabase
+        // Query all rows from the Tasks table
         return db.query(TABLE_TASKS, null, null, null, null, null, null)
     }
 
@@ -73,12 +84,14 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         values.put(COLUMN_TASK_TITLE, title)
         values.put(COLUMN_TASK_DESCRIPTION, description)
         values.put(COLUMN_TASK_DUE_DATE, dueDate)
+        // Update a specific row in the Tasks table
         db.update(TABLE_TASKS, values, "$COLUMN_ID = ?", arrayOf(id.toString()))
         db.close()
     }
 
     fun deleteTask(id: Int) {
         val db = this.writableDatabase
+        // Delete a specific row from the Tasks table
         db.delete(TABLE_TASKS, "$COLUMN_ID = ?", arrayOf(id.toString()))
         db.close()
     }
@@ -89,12 +102,14 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         val values = ContentValues()
         values.put(COLUMN_STUDY_MATERIAL_TITLE, title)
         values.put(COLUMN_STUDY_MATERIAL_CONTENT, content)
+        // Insert a new row into the Study Material table
         db.insert(TABLE_STUDY_MATERIAL, null, values)
         db.close()
     }
 
     fun getAllStudyMaterials(): Cursor {
         val db = this.readableDatabase
+        // Query all rows from the Study Material table
         return db.query(TABLE_STUDY_MATERIAL, null, null, null, null, null, null)
     }
 
@@ -103,12 +118,14 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         val values = ContentValues()
         values.put(COLUMN_STUDY_MATERIAL_TITLE, title)
         values.put(COLUMN_STUDY_MATERIAL_CONTENT, content)
+        // Update a specific row in the Study Material table
         db.update(TABLE_STUDY_MATERIAL, values, "$COLUMN_ID = ?", arrayOf(id.toString()))
         db.close()
     }
 
     fun deleteStudyMaterial(id: Int) {
         val db = this.writableDatabase
+        // Delete a specific row from the Study Material table
         db.delete(TABLE_STUDY_MATERIAL, "$COLUMN_ID = ?", arrayOf(id.toString()))
         db.close()
     }

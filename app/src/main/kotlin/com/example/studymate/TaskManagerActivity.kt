@@ -20,12 +20,15 @@ class TaskManagerActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerViewTasks)
         fabAddTask = findViewById(R.id.fabAddTask)
 
+        // Initialize the task list and task adapter
         taskList = mutableListOf()
         taskAdapter = TaskAdapter(taskList)
 
+        // Set up the RecyclerView with a LinearLayoutManager and the task adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = taskAdapter
 
+        // Set the click listener for the floating action button
         fabAddTask.setOnClickListener {
             // Implement the functionality to add a new task
             // For now, we will just add a dummy task
