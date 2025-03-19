@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 30
@@ -13,6 +14,27 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.release
+            groupId = 'com.example'
+            artifactId = 'studymate'
+            version = '1.0.0'
+        }
+    }
+    repositories {
+        maven {
+            name = 'GitHubPackages'
+            url = uri("https://maven.pkg.github.com/OWNER/REPOSITORY")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.token") ?: System.getenv("TOKEN")
+            }
         }
     }
 }
