@@ -38,8 +38,11 @@ class StudyMaterialActivity : AppCompatActivity() {
     }
 
     private fun loadStudyMaterials() {
+        // Load all study materials from the database
         val studyMaterials = databaseHelper.getAllStudyMaterials()
+        // Set up the adapter with the study materials
         adapter = StudyMaterialAdapter(studyMaterials)
+        // Attach the adapter to the RecyclerView
         recyclerView.adapter = adapter
     }
 
@@ -52,9 +55,13 @@ class StudyMaterialActivity : AppCompatActivity() {
             return
         }
 
+        // Create a new study material object
         val studyMaterial = StudyMaterial(title, content)
+        // Add the study material to the database
         databaseHelper.addStudyMaterial(studyMaterial)
+        // Reload the study materials to update the RecyclerView
         loadStudyMaterials()
+        // Clear the input fields
         editTextTitle.setText("")
         editTextContent.setText("")
         Toast.makeText(this, "Study material added", Toast.LENGTH_SHORT).show()

@@ -24,18 +24,27 @@ class ChatActivity : AppCompatActivity() {
         editTextMessage = findViewById(R.id.editTextMessage)
         buttonSend = findViewById(R.id.buttonSend)
 
+        // Initialize the message list and chat adapter
         messageList = mutableListOf()
         chatAdapter = ChatAdapter(messageList)
+
+        // Set up the RecyclerView with a LinearLayoutManager and the chat adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = chatAdapter
 
+        // Set the click listener for the send button
         buttonSend.setOnClickListener {
             val messageText = editTextMessage.text.toString().trim()
             if (messageText.isNotEmpty()) {
+                // Create a new message object with the user's message
                 val message = Message(messageText, "User")
+                // Add the message to the message list
                 messageList.add(message)
+                // Notify the adapter that a new item has been inserted
                 chatAdapter.notifyItemInserted(messageList.size - 1)
+                // Scroll the RecyclerView to the last message
                 recyclerView.scrollToPosition(messageList.size - 1)
+                // Clear the input field
                 editTextMessage.setText("")
             }
         }

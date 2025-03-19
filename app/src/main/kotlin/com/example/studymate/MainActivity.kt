@@ -12,28 +12,43 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    // Function to open the AttendanceActivity
     fun openAttendance(view: View) {
+        // Create an intent to start the AttendanceActivity
         val intent = Intent(this, AttendanceActivity::class.java)
+        // Start the activity
         startActivity(intent)
     }
 
+    // Function to open the TaskManagerActivity
     fun openTaskManager(view: View) {
+        // Create an intent to start the TaskManagerActivity
         val intent = Intent(this, TaskManagerActivity::class.java)
+        // Start the activity
         startActivity(intent)
     }
 
+    // Function to open the StudyMaterialActivity
     fun openStudyMaterial(view: View) {
+        // Create an intent to start the StudyMaterialActivity
         val intent = Intent(this, StudyMaterialActivity::class.java)
+        // Start the activity
         startActivity(intent)
     }
 
+    // Function to open the ChatActivity
     fun openChat(view: View) {
+        // Create an intent to start the ChatActivity
         val intent = Intent(this, ChatActivity::class.java)
+        // Start the activity
         startActivity(intent)
     }
 
+    // Function to open the AIChatbotActivity
     fun openAIChatbot(view: View) {
+        // Create an intent to start the AIChatbotActivity
         val intent = Intent(this, AIChatbotActivity::class.java)
+        // Start the activity
         startActivity(intent)
     }
 }

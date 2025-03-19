@@ -37,12 +37,16 @@ class AIChatbotActivity : AppCompatActivity() {
         sendButton = findViewById(R.id.send_button)
 
         try {
+            // Load the credentials from the raw resource file
             val stream: InputStream = resources.openRawResource(R.raw.credentials)
             val credentials = GoogleCredentials.fromStream(stream)
+            // Set up the Dialogflow sessions settings with the credentials
             val sessionsSettings = SessionsSettings.newBuilder()
                 .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
                 .build()
+            // Create the sessions client
             sessionsClient = SessionsClient.create(sessionsSettings)
+            // Generate a unique session name
             sessionName = SessionName.of(getString(R.string.project_id), UUID.randomUUID().toString())
         } catch (e: Exception) {
             e.printStackTrace()
@@ -59,14 +63,19 @@ class AIChatbotActivity : AppCompatActivity() {
     private fun sendMessageToChatbot(text: String) {
         Thread {
             try {
+                // Create a text input with the user's message
                 val textInput = TextInput.newBuilder().setText(text).setLanguageCode("en-US")
+                // Create a query input with the text input
                 val queryInput = QueryInput.newBuilder().setText(textInput).build()
+                // Create a detect intent request with the session name and query input
                 val detectIntentRequest = DetectIntentRequest.newBuilder()
                     .setSession(sessionName.toString())
                     .setQueryInput(queryInput)
                     .build()
+                // Send the request to Dialogflow and get the response
                 val response = sessionsClient.detectIntent(detectIntentRequest)
                 val result = response.queryResult
+                // Update the UI with the chatbot's response
                 runOnUiThread {
                     chatbotResponse.text = result.fulfillmentText
                 }
