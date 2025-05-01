@@ -16,7 +16,7 @@ To set up the development environment for this project, follow these steps:
 1. Install Android Studio: Download and install Android Studio from the official website: https://developer.android.com/studio
 2. Clone the repository: Clone this repository to your local machine using the following command:
    ```
-   git clone https://github.com/githubnext/workspace-blank.git
+   git clone https://github.com/yourusername/StudyMate.git
    ```
 3. Open the project: Open the cloned project in Android Studio.
 4. Install dependencies: Android Studio will automatically detect and install the required dependencies for the project.
