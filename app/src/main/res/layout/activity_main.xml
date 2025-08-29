@@ -5,6 +5,15 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:title="@string/toolbar_title"
+        android:titleTextColor="@color/white"
+        android:theme="@style/CustomToolbarStyle" />
+
     <Button
         android:id="@+id/btn_attendance"
         android:layout_width="match_parent"
