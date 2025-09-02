@@ -1,52 +1,114 @@
-# College Attendance System
+# StudyMate
 
-This project is an Android application designed to help college students manage their attendance, tasks, study materials, and communication with other students. The application includes the following features:
+StudyMate is a modern web application designed to help college students manage their attendance, tasks, study materials, and collaboration with fellow students. Built with Next.js 14+, TypeScript, and Tailwind CSS.
 
-- Attendance system: Students can mark their attendance according to their timetable.
-- Task manager: Students can manage their assignments and deadlines.
-- Study material database: Students can access and contribute study materials based on their semester.
-- AI chatbot: An AI chatbot is integrated to assist students with their queries and provide relevant information.
-- Secure environment: The application ensures a secure environment to protect user data and privacy.
-- Chat application: Students can communicate and brainstorm with each other.
+## Features
 
-## Development Environment Setup
+- **Attendance Management**: Track class attendance with intelligent timetable integration
+- **Task Management**: Organize assignments, deadlines, and study goals
+- **Study Materials**: Access and share resources based on semester and subjects
+- **Student Collaboration**: Connect and communicate with classmates
+- **AI Integration**: AI-powered assistance for academic queries
+- **Secure Environment**: Privacy-focused design for student data protection
 
-To set up the development environment for this project, follow these steps:
+## Tech Stack
 
-1. Install Android Studio: Download and install Android Studio from the official website: https://developer.android.com/studio
-2. Clone the repository: Clone this repository to your local machine using the following command:
+- **Framework**: Next.js 14+ with App Router
+- **Language**: TypeScript (strict mode)
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui with Radix UI
+- **Linting**: ESLint + Prettier
+- **Package Manager**: pnpm
+- **CI/CD**: GitHub Actions
+
+## Prerequisites
+
+- Node.js 20.x or higher
+- pnpm (recommended) or npm
+
+## Getting Started
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/NavneetSingh-WD/StudyMate.git
+   cd StudyMate
    ```
-   git clone https://github.com/githubnext/workspace-blank.git
-   ```
-3. Open the project: Open the cloned project in Android Studio.
-4. Install dependencies: Android Studio will automatically detect and install the required dependencies for the project.
 
-## Building and Running the Application
+2. **Install dependencies**:
 
-To build and run the application, follow these steps:
+   ```bash
+   pnpm install
+   ```
 
-1. Connect an Android device or start an Android emulator.
-2. In Android Studio, click on the "Run" button or use the shortcut `Shift + F10`.
-3. The application will be built and installed on the connected device or emulator.
+3. **Set up environment variables**:
 
-## Contributing to the Project
+   ```bash
+   cp .env.example .env.local
+   # Edit .env.local with your configuration
+   ```
 
-We welcome contributions to this project. To contribute, follow these steps:
+4. **Run the development server**:
 
-1. Fork the repository: Fork this repository to your GitHub account.
-2. Create a new branch: Create a new branch for your feature or bugfix.
+   ```bash
+   pnpm dev
    ```
-   git checkout -b my-feature-branch
-   ```
-3. Make changes: Make your changes to the codebase.
-4. Commit changes: Commit your changes with a descriptive commit message.
-   ```
-   git commit -m "Add new feature"
-   ```
-5. Push changes: Push your changes to your forked repository.
-   ```
-   git push origin my-feature-branch
-   ```
-6. Create a pull request: Create a pull request to merge your changes into the main repository.
 
-We will review your pull request and provide feedback. Once your changes are approved, they will be merged into the main repository.
+5. **Open your browser**:
+   Visit [http://localhost:3000](http://localhost:3000) to see the application.
+
+## Development Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm start` - Start production server
+- `pnpm lint` - Run ESLint
+- `pnpm typecheck` - Run TypeScript type checking
+- `pnpm format` - Format code with Prettier
+- `pnpm format:check` - Check code formatting
+
+## Project Structure
+
+```
+StudyMate/
+├── src/
+│   ├── app/                 # Next.js App Router pages
+│   │   ├── dashboard/       # Dashboard page (Issue #25)
+│   │   ├── roadmap/         # Roadmap page (Issue #20)
+│   │   ├── globals.css      # Global styles
+│   │   ├── layout.tsx       # Root layout
+│   │   └── page.tsx         # Home page
+│   ├── components/
+│   │   └── ui/              # shadcn/ui components
+│   └── lib/
+│       └── utils.ts         # Utility functions
+├── .github/workflows/       # CI/CD workflows
+└── ...config files
+```
+
+## Upcoming Features
+
+The following features are planned for future releases:
+
+- **Database Integration** (Prisma + PostgreSQL)
+- **Authentication** (Auth.js)
+- **Email System** (Resend)
+- **Subscription Management**
+- **Rate Limiting**
+- **Advanced Dashboard CRUD Operations**
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is private and proprietary. All rights reserved.
+
+## Support
+
+For support and questions, please open an issue in the GitHub repository.
